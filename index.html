@@ -30,24 +30,26 @@
   <iframe name="sendFrame" id="sendFrame" class="hidden" title="送信用フレーム"></iframe>
   <form id="postForm" class="hidden" method="post" target="sendFrame"></form>
 
-  <div id="confirmModal" class="modal hidden">
+<div id="submitModal" class="modal hidden">
   <div class="modal-content">
-    <p>送信します。よろしいですか？</p>
-    <div class="modal-actions">
-      <button onclick="confirmSubmit()">はい</button>
-      <button onclick="closeModal()">いいえ</button>
+    <div id="confirmView">
+      <p class="modal-message">送信します。よろしいですか？</p>
+      <div class="modal-actions">
+        <button type="button" class="modal-button primary" onclick="confirmSubmit()">はい</button>
+        <button type="button" class="modal-button" onclick="closeModal()">いいえ</button>
+      </div>
+    </div>
+
+    <div id="loadingView" class="hidden">
+      <div class="spinner"></div>
+      <p class="modal-message">送信中です…</p>
+    </div>
+
+    <div id="completeView" class="hidden">
+      <p class="modal-message">送信完了しました。</p>
+      <button type="button" class="modal-button primary large" onclick="goHome()">トップに戻る</button>
     </div>
   </div>
-</div>
-
-<div id="loading" class="loading hidden">
-  <div class="spinner"></div>
-  <p>送信中です…</p>
-</div>
-
-<div id="complete" class="complete hidden">
-  <p>送信完了しました。</p>
-  <button onclick="goHome()">トップに戻る</button>
 </div>
   
   <script src="script.js"></script>
