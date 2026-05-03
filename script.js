@@ -62,6 +62,7 @@ function joinFields() {
       </ul>
     </div>
     <div class="form-grid">
+    　<div class="field date-field"><label>届け出日<span class="required">必須</span></label><input type="date" name="submitDate" value="${today()}" required></div>
       <div class="field"><label>パート<span class="required">必須</span></label><select name="part" required>${partOptions()}</select></div>
       <div class="field"><label>氏名（漢字）<span class="required">必須</span></label><input name="name" required></div>
       <div class="field"><label>氏名（かな）<span class="required">必須</span></label><input name="kana" required></div>
@@ -96,7 +97,7 @@ function quitFields() {
 function simpleFields(kind) {
   return `
     <div class="form-grid">
-      <div class="field"><label>届け出日<span class="required">必須</span></label><input type="date" name="submitDate" value="${today()}" required></div>
+      <div class="field date-field"><label>届け出日<span class="required">必須</span></label><input type="date" name="submitDate" value="${today()}" required></div>
       <div class="field"><label>パート<span class="required">必須</span></label><select name="part" required>${partOptions()}</select></div>
       <div class="field full"><label>名前<span class="required">必須</span></label><input name="name" required></div>
     </div>`;
