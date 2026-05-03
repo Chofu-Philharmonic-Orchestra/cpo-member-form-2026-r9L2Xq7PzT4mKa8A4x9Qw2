@@ -104,17 +104,31 @@ function simpleFields(kind) {
 
 function submitForm(e) {
   e.preventDefault();
-  const status = document.getElementById("status");
-  if (!GAS_WEB_APP_URL.includes("script.google.com")) {
-    status.textContent = "GASのウェブアプリURLを設定してください。";
-    return;
-  }
+  window.currentForm = e.target;
+  document.getElementById("confirmModal").classList.remove("hidden");
+}
 
-  const data = Object.fromEntries(new FormData(e.target).entries());
+function goHome() {
+  formArea.classList.add("hidden");
+  home.classList.remove("hidden");
+  formArea.innerHTML = "";
+}
+
+function closeModal() {
+  document.getElementById("confirmModal").classList.add("hidden");
+}
+
+function confirmSubmit() {
+  document.getElementById("confirmModal").classList.add("hidden");
+  document.getElementById("loading").classList.remove("hidden");
+
+  const form = window.currentForm;
+  const data = Object.fromEntries(new FormData(form).entries());
   data.sentAt = new Date().toLocaleString("ja-JP");
 
   postForm.innerHTML = "";
   postForm.action = GAS_WEB_APP_URL;
+
   Object.entries(data).forEach(([key, value]) => {
     const input = document.createElement("input");
     input.type = "hidden";
@@ -123,16 +137,11 @@ function submitForm(e) {
     postForm.appendChild(input);
   });
 
-  status.textContent = "送信中です…";
   postForm.submit();
-  setTimeout(() => {
-    status.textContent = "送信しました。ありがとうございました。";
-    e.target.reset();
-  }, 1200);
-}
 
-function goHome() {
-  formArea.classList.add("hidden");
-  home.classList.remove("hidden");
-  formArea.innerHTML = "";
+  setTimeout(() => {
+    document.getElementById("loading").classList.add("hidden");
+    document.getElementById("complete").classList.remove("hidden");
+    form.reset();
+  }, 1500);
 }
