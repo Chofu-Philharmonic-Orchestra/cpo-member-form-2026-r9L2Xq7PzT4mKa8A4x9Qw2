@@ -45,7 +45,7 @@ function showForm(kind) {
   if (kind === "return") body = returnFields();
   if (kind === "quit") body = quitFields();
 
-  formArea.innerHTML = `${commonHeader}<form id="memberForm">${body}<input type="hidden" name="type" value="${formInfo[kind].type}"><div class="actions"><button class="submit-button" type="submit">送信する</button><span id="status" class="status"></span></div></form>`;
+  formArea.innerHTML = `${commonHeader}<form id="memberForm">${body}<input type="hidden" name="type" value="${formInfo[kind].type}"><div class="actions"><button class="submit-button" type="submit">送信</button><span id="status" class="status"></span></div></form>`;
   home.classList.add("hidden");
   formArea.classList.remove("hidden");
   document.getElementById("memberForm").addEventListener("submit", submitForm);
