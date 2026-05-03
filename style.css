@@ -79,77 +79,79 @@ textarea { min-height: 110px; resize: vertical; }
   padding-top: 0;
 }
 
-/* ===== モーダル（確認画面） ===== */
+/* ===== 送信確認モーダル ===== */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
+  padding: 24px;
 }
 
 .modal-content {
   background: #fff;
-  padding: 20px 24px;
-  border-radius: 12px;
+  width: min(420px, 100%);
+  min-height: 220px;
+  padding: 36px 28px;
+  border-radius: 18px;
   text-align: center;
+  box-shadow: 0 12px 36px rgba(0,0,0,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-message {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 24px;
 }
 
 .modal-actions {
-  margin-top: 12px;
   display: flex;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
 }
 
-/* ===== ローディング ===== */
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.modal-button {
+  border: 1px solid var(--line);
   background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  min-width: 110px;
+}
+
+.modal-button.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.modal-button.large {
+  margin-top: 8px;
+  min-width: 180px;
+  padding: 14px 32px;
+  font-size: 18px;
 }
 
 .spinner {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 4px solid #ddd;
-  border-top: 4px solid #c4003b;
+  border-top: 4px solid var(--accent);
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin-bottom: 12px;
+  margin: 0 auto 18px;
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
-}
-
-/* ===== 完了画面 ===== */
-.complete {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  z-index: 999;
 }
