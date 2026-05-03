@@ -105,22 +105,32 @@ function simpleFields(kind) {
 function submitForm(e) {
   e.preventDefault();
   window.currentForm = e.target;
-  document.getElementById("confirmModal").classList.remove("hidden");
+
+  document.getElementById("confirmView").classList.remove("hidden");
+  document.getElementById("loadingView").classList.add("hidden");
+  document.getElementById("completeView").classList.add("hidden");
+
+  document.getElementById("submitModal").classList.remove("hidden");
 }
 
 function goHome() {
+  document.getElementById("submitModal").classList.add("hidden");
+
   formArea.classList.add("hidden");
   home.classList.remove("hidden");
   formArea.innerHTML = "";
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function closeModal() {
-  document.getElementById("confirmModal").classList.add("hidden");
+  document.getElementById("submitModal").classList.add("hidden");
 }
 
 function confirmSubmit() {
-  document.getElementById("confirmModal").classList.add("hidden");
-  document.getElementById("loading").classList.remove("hidden");
+  document.getElementById("confirmView").classList.add("hidden");
+  document.getElementById("loadingView").classList.remove("hidden");
+  document.getElementById("completeView").classList.add("hidden");
 
   const form = window.currentForm;
   const data = Object.fromEntries(new FormData(form).entries());
@@ -140,8 +150,8 @@ function confirmSubmit() {
   postForm.submit();
 
   setTimeout(() => {
-    document.getElementById("loading").classList.add("hidden");
-    document.getElementById("complete").classList.remove("hidden");
+    document.getElementById("loadingView").classList.add("hidden");
+    document.getElementById("completeView").classList.remove("hidden");
     form.reset();
   }, 1500);
 }
