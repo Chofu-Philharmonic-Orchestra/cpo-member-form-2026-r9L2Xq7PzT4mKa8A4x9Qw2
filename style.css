@@ -167,6 +167,23 @@ textarea {
 
 .date-field {
   grid-column: 1 / 2;
-  max-width: 260px;
+  width: 320px;
+  max-width: 100%;
   justify-self: start;
+}
+
+.date-field input[type="date"] {
+  height: 48px;
+  min-height: 48px;
+  padding: 8px 12px;
+  line-height: 1.2;
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+@media (max-width: 720px) {
+  .date-field {
+    width: 100%;
+  }
 }
