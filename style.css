@@ -160,3 +160,13 @@ textarea { min-height: 110px; resize: vertical; }
   max-width: 260px;
   justify-self: start;
 }
+
+input,
+select,
+textarea {
+  min-height: 48px;
+}
+
+select {
+  height: 48px;
+}
