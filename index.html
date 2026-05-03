@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>団員用届け出フォーム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <p class="eyebrow">調布フィルハーモニー管弦楽団</p>
+      <h1>団員用届け出フォーム</h1>
+      <p>該当する届け出を選択し、必要事項を入力してください。</p>
+    </header>
+
+    <section id="home" class="card-grid" aria-label="届け出の種類を選択">
+      <button class="menu-card" data-form="join"><span>入団届</span><small>団員カードの提出</small></button>
+      <button class="menu-card" data-form="leave"><span>休団届</span><small>演奏会単位の休団</small></button>
+      <button class="menu-card" data-form="return"><span>復団届</span><small>休団中の復団</small></button>
+      <button class="menu-card" data-form="quit"><span>退団届</span><small>退団の届け出</small></button>
+    </section>
+
+    <section id="formArea" class="form-card hidden"></section>
+  </main>
+
+  <iframe name="sendFrame" id="sendFrame" class="hidden" title="送信用フレーム"></iframe>
+  <form id="postForm" class="hidden" method="post" target="sendFrame"></form>
+
+  <script src="script.js"></script>
+</body>
+</html>
