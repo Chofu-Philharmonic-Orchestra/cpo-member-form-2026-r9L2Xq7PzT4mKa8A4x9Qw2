@@ -158,4 +158,5 @@ textarea { min-height: 110px; resize: vertical; }
 
 .date-field {
   max-width: 260px;
+  justify-self: start;
 }
