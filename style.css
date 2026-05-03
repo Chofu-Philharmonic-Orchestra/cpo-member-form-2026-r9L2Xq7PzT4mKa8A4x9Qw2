@@ -155,3 +155,7 @@ textarea { min-height: 110px; resize: vertical; }
     transform: rotate(360deg);
   }
 }
+
+.date-field {
+  max-width: 220px;
+}
