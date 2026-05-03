@@ -56,3 +56,17 @@ textarea { min-height: 110px; resize: vertical; }
   .card-grid, .form-grid { grid-template-columns: 1fr; }
   .form-header { flex-direction: column-reverse; }
 }
+
+.logo-bar {
+  background-color: #c4003b;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.logo {
+  max-height: 50px;
+  width: auto;
+}
