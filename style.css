@@ -59,14 +59,21 @@ textarea { min-height: 110px; resize: vertical; }
 
 .logo-bar {
   background-color: #c4003b;
-  height: 70px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+
+  width: 100vw;         
+  margin-left: calc(50% - 50vw);
 }
 
 .logo {
   max-height: 50px;
   width: auto;
+}
+
+.hero {
+  margin-top: 0;
+  padding-top: 0;
 }
