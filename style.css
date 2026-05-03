@@ -156,11 +156,6 @@ textarea { min-height: 110px; resize: vertical; }
   }
 }
 
-.date-field {
-  max-width: 300px;
-  justify-self: start;
-}
-
 input,
 select {
   height: 48px;
@@ -172,6 +167,6 @@ textarea {
 
 .date-field {
   grid-column: 1 / 2;
-  max-width: 260px;
+  max-width: 320px;
   justify-self: start;
 }
