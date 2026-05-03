@@ -162,11 +162,16 @@ textarea { min-height: 110px; resize: vertical; }
 }
 
 input,
-select,
-textarea {
-  min-height: 48px;
-}
-
 select {
   height: 48px;
+}
+
+textarea {
+  min-height: 110px;
+}
+
+.date-field {
+  grid-column: 1 / 2;
+  max-width: 260px;
+  justify-self: start;
 }
