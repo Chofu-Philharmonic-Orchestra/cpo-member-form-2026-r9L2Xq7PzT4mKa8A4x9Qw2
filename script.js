@@ -152,6 +152,10 @@ function confirmSubmit() {
   const data = Object.fromEntries(new FormData(form).entries());
   data.sentAt = new Date().toLocaleString("ja-JP");
 
+  if (data.leaveYear && data.leaveSeason) {
+  data.leavePeriod = `${data.leaveYear}年${data.leaveSeason}演奏会まで`;
+}
+
   postForm.innerHTML = "";
   postForm.action = GAS_WEB_APP_URL;
 
