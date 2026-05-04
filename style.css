@@ -247,3 +247,16 @@ input[type="month"]::-webkit-date-and-time-value {
 .notice {
   line-height: 1.8;
 }
+
+.menu-card {
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-card span {
+  color: var(--text);
+}
+
+.menu-card:active {
+  opacity: 0.7;
+}
