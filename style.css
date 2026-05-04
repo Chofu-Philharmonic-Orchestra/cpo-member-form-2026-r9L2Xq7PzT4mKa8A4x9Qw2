@@ -225,4 +225,5 @@ input[type="month"]::-webkit-date-and-time-value {
 
 .leave-period-row span {
   white-space: nowrap;
+  font-weight: 600;
 }
