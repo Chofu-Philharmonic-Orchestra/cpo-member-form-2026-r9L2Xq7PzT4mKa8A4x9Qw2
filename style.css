@@ -239,3 +239,8 @@ input[type="month"]::-webkit-date-and-time-value {
     font-size: 14px;
   }
 }
+
+.note {
+  font-size: 0.9em;
+  color: #555;
+}
