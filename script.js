@@ -116,7 +116,7 @@ function joinFields() {
 
 function leaveFields() {
   return `
-    <div class="notice"><strong>休団届の注意事項</strong><ul><li>休団は演奏会単位です。</li></li>休団による団費支払い免除は、「演奏会を含む月の翌月」から「その次の演奏会を含む月」までです。</li><li>休団中に復団する場合は、復団届を提出してください。</li>
+    <div class="notice"><strong>休団届の注意事項</strong><ul><li>休団は演奏会単位です。</li><li>休団による団費支払い免除は、「演奏会を含む月の翌月」から「その次の演奏会を含む月」までです。</li><li>休団中に復団する場合は、復団届を提出してください。</li>
     <li>休団期間終了時は自動的に復団となります。<br>次シーズンも続けて休団する場合は、改めて休団届を提出してください。</li></ul></div>
     ${simpleFields("leave")}
     <div class="form-grid">
