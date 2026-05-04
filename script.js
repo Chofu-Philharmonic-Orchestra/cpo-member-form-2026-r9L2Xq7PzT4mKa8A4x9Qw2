@@ -140,7 +140,7 @@ function leaveFields() {
 
 function returnFields() {
   return `
-    <div class="notice"><strong>復団届の注意事項</strong><ul><li>休団中に復団届を提出すると、休団を取り消した扱いになります。<br>このため、団費の支払い免除も無効となり、前回の演奏会の翌月からの団費が発生します。</li>
+    <div class="notice"><strong>復団届の注意事項</strong><ul><li>休団中に復団届を提出すると、休団を取り消した扱いになります。<br>このため、団費の支払い免除も無効となり、前回演奏会の翌月からの団費が発生します。</li>
     <li>休団期間終了時は復団届の提出は不要です。</li></ul></div>
     ${simpleFields("return")}`;
 }
