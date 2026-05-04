@@ -171,3 +171,13 @@ function confirmSubmit() {
     form.reset();
   }, 1500);
 }
+
+function yearOptions() {
+  const current = new Date().getFullYear();
+  let options = '<option value="">選択</option>';
+  for (let i = 0; i < 5; i++) {
+    const y = current + i;
+    options += `<option value="${y}">${y}</option>`;
+  }
+  return options;
+}
