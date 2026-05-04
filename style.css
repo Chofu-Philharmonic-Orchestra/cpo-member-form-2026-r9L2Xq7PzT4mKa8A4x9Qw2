@@ -210,3 +210,18 @@ input[type="month"]::-webkit-date-and-time-value {
   width: auto;
   min-width: 100px;
 }
+
+.leave-period-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.leave-period-row select {
+  width: auto;
+  min-width: 110px;
+}
+
+.leave-period-row span {
+  white-space: nowrap;
+}
