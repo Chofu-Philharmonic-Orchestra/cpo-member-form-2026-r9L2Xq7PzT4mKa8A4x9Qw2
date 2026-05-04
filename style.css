@@ -227,3 +227,15 @@ input[type="month"]::-webkit-date-and-time-value {
   white-space: nowrap;
   font-weight: 600;
 }
+
+@media (max-width: 480px) {
+  .leave-period-row select {
+    min-width: 80px;
+    font-size: 14px;
+    padding: 8px 8px;
+  }
+
+  .leave-period-row span {
+    font-size: 14px;
+  }
+}
