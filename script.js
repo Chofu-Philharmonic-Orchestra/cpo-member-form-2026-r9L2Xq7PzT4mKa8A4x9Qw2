@@ -35,7 +35,7 @@ function today() {
 function showForm(kind) {
   const commonHeader = `
     <div class="form-header">
-      <div><h2>${formInfo[kind].title}</h2><p>必要事項を入力のうえ、送信ボタンを押してください。</p></div>
+      <div><h2>${formInfo[kind].title}</h2>${kind === "join" ? "" : "<p>必要事項を入力のうえ、送信ボタンを押してください。</p>"}</div>
       <button type="button" class="back-button" onclick="goHome()">← 選択画面に戻る</button>
     </div>`;
 
