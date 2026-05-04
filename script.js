@@ -67,10 +67,10 @@ function joinFields() {
       <div class="field"><label>氏名（漢字）<span class="required">必須</span></label><input name="name" required></div>
       <div class="field"><label>氏名（かな）<span class="required">必須</span></label><input name="kana" required></div>
       <div class="field"><label>区分<span class="required">必須</span></label><select name="memberClass" required><option value="社会人">社会人</option><option value="学生">学生</option></select></div>
+      <div class="field"><label>電話番号<span class="required">必須</span></label><input name="phone" required></div>
       <div class="field full"><label>メールアドレス1<span class="required">必須</span></label><div class="email-row"><input type="email" name="email1" required><label class="check"><input type="checkbox" name="ml1" value="登録希望">ML登録</label></div></div>
       <div class="field full"><label>メールアドレス2</label><div class="email-row"><input type="email" name="email2"><label class="check"><input type="checkbox" name="ml2" value="登録希望">ML登録</label></div></div>
-      <div class="field"><label>郵便番号</label><input name="zip" placeholder="182-0000"></div>
-      <div class="field"><label>電話番号<span class="required">必須</span></label><input name="phone" required></div>
+      <div class="field"><label>郵便番号<span class="required">必須</span></label><input name="zip" placeholder="182-0000" required></div>
       <div class="field full"><label>住所<span class="required">必須</span></label><input name="address" required></div>
       <div class="field"><label>入団年月<span class="required">必須</span></label><input type="month" name="joinMonth" required></div>
       <div class="field full"><label>備考</label><textarea name="notes"></textarea></div>
