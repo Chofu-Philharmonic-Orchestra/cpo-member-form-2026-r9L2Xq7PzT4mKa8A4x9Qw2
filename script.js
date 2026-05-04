@@ -88,6 +88,7 @@ function leaveFields() {
       <select name="leaveYear" required>
         ${yearOptions()}
       </select>
+      <span>年</span>
       <select name="leaveSeason" required>
         <option value="">選択</option>
         <option value="春">春</option>
