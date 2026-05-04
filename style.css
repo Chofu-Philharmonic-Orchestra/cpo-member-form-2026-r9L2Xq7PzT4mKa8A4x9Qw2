@@ -199,3 +199,14 @@ input[type="month"]::-webkit-date-and-time-value {
 .form-grid + .form-grid {
   margin-top: 20px;
 }
+
+.leave-period-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.leave-period-row select {
+  width: auto;
+  min-width: 100px;
+}
