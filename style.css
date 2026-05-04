@@ -220,6 +220,7 @@ input[type="month"]::-webkit-date-and-time-value {
 .leave-period-row select {
   width: auto;
   min-width: 110px;
+  padding: 10px 12px;
 }
 
 .leave-period-row span {
