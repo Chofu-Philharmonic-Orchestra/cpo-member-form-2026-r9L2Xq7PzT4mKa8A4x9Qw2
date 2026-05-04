@@ -180,7 +180,7 @@ function confirmSubmit() {
 function yearOptions() {
   const current = new Date().getFullYear();
   let options = '<option value="">選択</option>';
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 10; i++) {
     const y = current + i;
     options += `<option value="${y}">${y}</option>`;
   }
