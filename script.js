@@ -81,7 +81,22 @@ function leaveFields() {
   return `
     <div class="notice"><strong>休団届の注意事項</strong><ul><li>休団は演奏会単位です。</li><li>休団中に復団する場合は、復団届を提出してください。</li><li>休団期間終了時は自動的に復団となります。</li></ul></div>
     ${simpleFields("leave")}
-    <div class="form-grid"><div class="field full"><label>休団期間<span class="required">必須</span></label><input name="leavePeriod" placeholder="例：2026年 春 演奏会 まで" required></div></div>`;
+    <div class="form-grid">
+  <div class="field full">
+    <label>休団期間<span class="required">必須</span></label>
+    <div class="leave-period-row">
+      <select name="leaveYear" required>
+        ${yearOptions()}
+      </select>
+      <select name="leaveSeason" required>
+        <option value="">選択</option>
+        <option value="春">春</option>
+        <option value="冬">冬</option>
+      </select>
+      <span>演奏会まで</span>
+    </div>
+  </div>
+</div>`;
 }
 
 function returnFields() {
