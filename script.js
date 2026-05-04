@@ -67,7 +67,9 @@ function joinFields() {
     「ML登録」にチェックをつけたメールアドレスに、all@cpo.jpn.orgからメールが届きます。<br>
     迷惑メール対策をされている場合は、ご注意下さい。</li>
 
-    <li>お知らせ済みの練習予定、団の規定などはホームページ(http://cpo.jpn.org/)の団員ページに載っていますので、必ずお読み下さい。<br>
+    <li>お知らせ済みの練習予定、団の規定などはホームページ
+    (<a href="http://cpo.jpn.org/" target="_blank" rel="noopener noreferrer">http://cpo.jpn.org/</a>)
+    の団員ページに載っていますので、必ずお読み下さい。<br>
     （パスワードはパートリーダーから聞いて下さい）</li>
 
     <li>調フィルでは、団員全員に活動費のご負担をお願いしています。<br>
