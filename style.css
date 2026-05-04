@@ -195,3 +195,7 @@ input[type="month"]::-webkit-date-and-time-value {
   color: var(--text);
   text-align: left;
 }
+
+.form-grid + .form-grid {
+  margin-top: 20px;
+}
