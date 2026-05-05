@@ -153,7 +153,17 @@ function simpleFields(kind) {
 
 function submitForm(e) {
   e.preventDefault();
-  window.currentForm = e.target;
+
+  const form = e.target;
+  const ml1 = form.querySelector('input[name="ml1"]');
+  const ml2 = form.querySelector('input[name="ml2"]');
+
+  if (!ml1.checked && !ml2.checked) {
+    alert("メールアドレスのどちらか1つ以上に「ML登録」をチェックしてください。");
+    return;
+  }
+
+  window.currentForm = form;
 
   document.getElementById("confirmView").classList.remove("hidden");
   document.getElementById("loadingView").classList.add("hidden");
