@@ -1,4 +1,3 @@
-// 1) GASをウェブアプリとして公開したあと、発行されたURLをここに貼り付けてください。
 const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyB4Ti2rWL8FG-IIRJGFsJP8QH3CgzxTzbyKLUjHyjCtxGhg6Xy5Ci6C3ohpia9AqCopQ/exec";
 
 const PARTS = ["Vn", "Va", "Vc", "Cb", "Fl", "Ob", "Cl", "Fg", "Hr", "Trp", "Trb", "Tuba", "Perc", "その他"];
