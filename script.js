@@ -155,12 +155,26 @@ function submitForm(e) {
   e.preventDefault();
 
   const form = e.target;
-  const ml1 = form.querySelector('input[name="ml1"]');
-  const ml2 = form.querySelector('input[name="ml2"]');
+  const status = document.getElementById("status");
 
-  if (!ml1.checked && !ml2.checked) {
-    alert("メールアドレスのどちらか1つ以上に「ML登録」をチェックしてください。");
-    return;
+  if (status) {
+    status.textContent = "";
+    status.classList.remove("error");
+  }
+
+  const type = form.querySelector('input[name="type"]').value;
+
+  if (type === "入団届") {
+    const ml1 = form.querySelector('input[name="ml1"]');
+    const ml2 = form.querySelector('input[name="ml2"]');
+
+    if (!ml1.checked && !ml2.checked) {
+      if (status) {
+        status.textContent = "※メールアドレスのどちらか1つ以上に「ML登録」をチェックしてください";
+        status.classList.add("error");
+      }
+      return;
+    }
   }
 
   window.currentForm = form;
