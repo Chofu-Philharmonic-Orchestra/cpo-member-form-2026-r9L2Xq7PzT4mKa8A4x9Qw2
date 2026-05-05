@@ -125,17 +125,9 @@ function leaveFields() {
   <div class="field full">
     <label>休団期間<span class="required">必須</span></label>
     <div class="leave-period-row">
-      <select name="leaveYear" required>
-        ${yearOptions()}
-      </select>
-      <span>年</span>
-      <select name="leaveSeason" required>
-        <option value="">選択</option>
-        <option value="春">春</option>
-        <option value="冬">冬</option>
-      </select>
-      <span>演奏会まで</span>
-    </div>
+  <input type="date" name="leaveStartDate" class="leave-start-date" value="${today()}" required>
+  <span>から次回演奏会まで</span>
+</div>
   </div>
 </div>`;
 }
@@ -194,8 +186,8 @@ function confirmSubmit() {
   const data = Object.fromEntries(new FormData(form).entries());
   data.sentAt = new Date().toLocaleString("ja-JP");
 
-  if (data.leaveYear && data.leaveSeason) {
-  data.leavePeriod = `${data.leaveYear}年${data.leaveSeason}演奏会まで`;
+  if (data.leaveStartDate) {
+  data.leavePeriod = `${data.leaveStartDate}から次回演奏会まで`;
 }
 
   postForm.innerHTML = "";
@@ -216,14 +208,4 @@ function confirmSubmit() {
     document.getElementById("completeView").classList.remove("hidden");
     form.reset();
   }, 1500);
-}
-
-function yearOptions() {
-  const current = new Date().getFullYear();
-  let options = '<option value="">選択</option>';
-  for (let i = 0; i < 10; i++) {
-    const y = current + i;
-    options += `<option value="${y}">${y}</option>`;
-  }
-  return options;
 }
