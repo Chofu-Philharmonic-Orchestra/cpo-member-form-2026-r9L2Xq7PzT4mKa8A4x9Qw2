@@ -124,7 +124,7 @@ function leaveFields() {
   <div class="field full">
     <label>休団期間<span class="required">必須</span></label>
     <div class="leave-period-row">
-  <input type="date" name="leaveStartDate" class="leave-start-date" value="${today()}" required>
+  <input type="date" name="leaveStartDate" class="leave-start-date" required>
   <span>から次回演奏会まで</span>
 </div>
   </div>
