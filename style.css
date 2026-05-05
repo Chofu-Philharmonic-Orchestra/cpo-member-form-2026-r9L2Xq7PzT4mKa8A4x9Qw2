@@ -256,3 +256,33 @@ input[type="month"]::-webkit-date-and-time-value {
 .menu-card span {
   color: var(--text);
 }
+
+.leave-start-date {
+  width: 180px;
+  max-width: 100%;
+}
+
+.leave-period-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.leave-period-row span {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .leave-start-date {
+    width: 165px;
+  }
+
+  .leave-period-row {
+    gap: 8px;
+  }
+
+  .leave-period-row span {
+    font-size: 14px;
+  }
+}
