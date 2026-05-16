@@ -54,64 +54,23 @@ function showForm(kind) {
 function joinFields() {
   return `
     <div class="notice">
-  <strong>入団にあたって</strong>
-  <p>調布フィルハーモニー管弦楽団へようこそ！<br>
-  入力前に、下記の内容をご確認ください。</p>
+      <strong>入団届について</strong>
+      <ul>
+        <li>入団希望の方の名前とメールアドレスを入力してください。</li>
+        <li>入力したメールアドレスに、入団届出フォームのURLが記載されたメールが送信されます。</li>
+      </ul>
+    </div>
 
-  <ul>
-    <li>調フィルの練習は基本的に毎週土曜日の18:30〜21:00です。<br>
-    遅刻、欠席等の連絡については、パートリーダーにご確認ください。</li>
-
-    <li>練習予定や練習場所はメールでお知らせします。<br>
-    「ML登録」にチェックをつけたメールアドレスに、all@cpo.jpn.orgからメールが届きます。<br>
-    迷惑メール対策をされている場合は、ご注意下さい。</li>
-
-    <li>お知らせ済みの練習予定、団の規定などはホームページ
-    (<a href="http://cpo.jpn.org/" target="_blank" rel="noopener noreferrer">http://cpo.jpn.org/</a>)
-    の団員ページに載っていますので、必ずお読み下さい。<br>
-    （パスワードはパートリーダーから聞いて下さい）</li>
-
-    <li>調フィルでは、団員全員に活動費のご負担をお願いしています。<br>
-    入団金：2,000円<br>
-    団費：毎月3,000円（学生は2,000円）<br>
-    演奏会費：演奏会ごとに約20,000円（学生は半額）<br>
-    <span class="note">※入団金と団費は、専用の団費袋に入れて会計係までお願いします。</span><br>
-    <span class="note">※団費は、入団月翌月から退団月まで発生します。</span><br>
-    <span class="note">（休団の制度もあります。詳しくはパートリーダーまで）</span><br>
-    <span class="note">※演奏会費は、演奏会ごとに変わります。</span></li>
-
-    <li>調フィルでは、団員全員になんらかの係の分担をお願いしています。<br>
-    ご協力お願いします。</li>
-
-    <li>以上ご了承いただけましたら、必要事項を入力いただき、送信ボタンを押してください。<br>
-    なお、入力された内容は名簿（現在非公開）に掲載され、主に緊急時などの連絡に使用します。</li>
-  </ul>
-
-  <p><strong>入力にあたり下記ご注意ください</strong></p>
-
-  <ul>
-    <li>電話番号は連絡のつく番号を入力してください。固定電話も携帯電話も複数可。<br>
-    複数入力する場合は、スペースで区切ってください。</li>
-
-    <li>メールアドレスは連絡のつくアドレスを記入してください。<br>
-    メーリングリストに登録するアドレスは「ML登録」にチェックしてください。</li>
-
-    <li>入団年月はパートリーダーと相談して決めてください。</li>
-  </ul>
-</div>
     <div class="form-grid">
-      <div class="field date-field"><label>届け出日<span class="required">必須</span></label><input type="date" name="submitDate" value="${today()}" required></div>
-      <div class="field"><label>パート<span class="required">必須</span></label><select name="part" required>${partOptions()}</select></div>
-      <div class="field"><label>氏名（漢字）<span class="required">必須</span></label><input name="name" required></div>
-      <div class="field"><label>氏名（かな）<span class="required">必須</span></label><input name="kana" required></div>
-      <div class="field"><label>区分<span class="required">必須</span></label><select name="memberClass" required><option value="社会人">社会人</option><option value="学生">学生</option></select></div>
-      <div class="field"><label>電話番号<span class="required">必須</span></label><input name="phone" required></div>
-      <div class="field full"><label>メールアドレス1<span class="required">必須</span></label><div class="email-row"><input type="email" name="email1" required><label class="check"><input type="checkbox" name="ml1" value="登録希望">ML登録</label></div></div>
-      <div class="field full"><label>メールアドレス2</label><div class="email-row"><input type="email" name="email2"><label class="check"><input type="checkbox" name="ml2" value="登録希望">ML登録</label></div></div>
-      <div class="field"><label>郵便番号<span class="required">必須</span></label><input name="zip" placeholder="182-0000" required></div>
-      <div class="field full"><label>住所<span class="required">必須</span></label><input name="address" required></div>
-      <div class="field"><label>入団年月<span class="required">必須</span></label><input type="month" name="joinMonth" required></div>
-      <div class="field full"><label>備考</label><textarea name="notes"></textarea></div>
+      <div class="field full">
+        <label>名前<span class="required">必須</span></label>
+        <input name="name" required>
+      </div>
+
+      <div class="field full">
+        <label>メールアドレス<span class="required">必須</span></label>
+        <input type="email" name="email1" required>
+      </div>
     </div>`;
 }
 
@@ -164,19 +123,6 @@ function submitForm(e) {
   }
 
   const type = form.querySelector('input[name="type"]').value;
-
-  if (type === "入団届") {
-    const ml1 = form.querySelector('input[name="ml1"]');
-    const ml2 = form.querySelector('input[name="ml2"]');
-
-    if (!ml1.checked && !ml2.checked) {
-      if (status) {
-        status.textContent = "※メールアドレスのどちらか1つ以上に「ML登録」をチェックしてください";
-        status.classList.add("error");
-      }
-      return;
-    }
-  }
 
   window.currentForm = form;
 
